@@ -13,7 +13,17 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://localhost:3000",
+      'img-src': "'self' * ",
+      'style-src': "'self'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'frame-src': "*"
+    },
+    backend: {
+      namespace: 'http://localhost:3000'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -32,6 +42,8 @@ module.exports = function(environment) {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
+
+    ENV.backend.namespace = '';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
