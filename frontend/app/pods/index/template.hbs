@@ -1,3 +1,5 @@
+<h2 id="title">EmotionalizeSF</h2>
+
 {{#each upcomingEvents as |event|}}
-  <p>{{date-format event.date}} | {{event.title}} | {{event.venue}}</p>
+  <p>{{#link-to 'event' event.id}}{{date-format event.date}} | {{event.title}} | {{event.venue}}{{/link-to}}</p>
 {{/each}}
