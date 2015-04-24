@@ -1,0 +1,15 @@
+@import 'application';
+@import 'index';
+@import 'normalize';
+@import 'event';
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Ariel';
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
