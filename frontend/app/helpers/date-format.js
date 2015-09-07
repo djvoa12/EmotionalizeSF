@@ -1,17 +1,13 @@
+/* globals moment */
 import Ember from 'ember';
 
-export default Ember.Handlebars.makeBoundHelper(function(datetime) {
-  var month = (datetime.getUTCMonth() + 1).toString();
-  var year = datetime.getUTCFullYear().toString();
-  var day = datetime.getUTCDate().toString();
+const { Helper } = Ember;
+const { helper } = Helper;
 
-  if (month.length < 2) {
-    month = '0'.concat(month);
-  }
+export function dateFormat(datetime) {
+  let argument = datetime[0];
 
-  if (day.length < 2) {
-    day = '0'.concat(day);
-  }
+  return moment(argument).utcOffset("+07:00").format("MM-DD-YY");
+}
 
-  return `${month}-${day}-${year}`;
-});
+export default helper(dateFormat);
