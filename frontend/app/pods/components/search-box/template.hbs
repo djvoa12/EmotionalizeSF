@@ -1,0 +1,13 @@
+{{#ui-autocomplete
+  id="input-autocomplete"
+  placeholder="Search for an artist or an event name"
+  value=value
+  on-change="setValue"
+  inline=true
+  items=filteredResults as |item|}}
+  {{#ui-option value=item.title}}
+    {{#link-to 'event' item.id}}{{item.title}}{{/link-to}}
+  {{/ui-option}}
+{{else}}
+  {{ui-option class="no-results" value="No Results"}}
+{{/ui-autocomplete}}

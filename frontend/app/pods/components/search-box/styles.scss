@@ -1,0 +1,19 @@
+#input-autocomplete {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 30em;
+
+  .ff-autocomplete-field {
+    width: 100%;
+    outline: none;
+    font-size: 2em;
+  }
+
+  .ui-autocomplete-inline {
+    width: 100%;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}

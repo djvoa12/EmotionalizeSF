@@ -1,5 +1,7 @@
 <h2 id="title">EmotionalizeSF</h2>
 
+{{search-box items=upcomingEvents}}
+
 {{#each upcomingEvents as |event|}}
   <p>{{#link-to 'event' event.id}}{{date-format event.date}} | {{event.title}} | {{event.venue}}{{/link-to}}</p>
 {{/each}}
