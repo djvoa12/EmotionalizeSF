@@ -20,7 +20,6 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.1.2",
-    "broccoli-sass": "^0.6.6",
     "ember-cli": "1.13.8",
     "ember-cli-app-version": "0.5.0",
     "ember-cli-babel": "^5.1.3",
@@ -34,11 +33,15 @@
     "ember-cli-mirage": "0.1.8",
     "ember-cli-qunit": "^1.0.0",
     "ember-cli-release": "0.2.3",
+    "ember-cli-sass": "^4.2.0",
     "ember-cli-sri": "^1.0.3",
     "ember-cli-uglify": "^1.2.0",
+    "ember-component-css": "0.1.6",
     "ember-data": "1.13.8",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
-    "phantomjs": "^1.9.18"
+    "liquid-fire": "0.21.2",
+    "phantomjs": "^1.9.18",
+    "ui-autocomplete": "firefly-ui/ui-autocomplete#v0.0.8"
   }
 }
