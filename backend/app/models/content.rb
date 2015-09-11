@@ -15,11 +15,23 @@ class Content
         next
       else
         date = Date.strptime(array[0][0..-2], '%m.%d.%Y')
-        title = array[2][1..-2]
-        venue = array[3][1..-2]
 
-        Event.create!(date: date, title: title, venue: venue)
+        if result.children[2]
+          moreResults = result.children[2].to_s.gsub(/\u2022/,'-').split('-')
+
+          title1 = result.children[1].children.to_s
+          title2 = moreResults[0]
+
+          title = title1 + title2
+          venue = moreResults[1]
+        else
+          title = array[2][1..-2]
+          venue = array[3][1..-2]
+        end
       end
+
+      title.gsub!('amp;', '')
+      Event.create!(date: date, title: title, venue: venue)
     end
   end
 end
