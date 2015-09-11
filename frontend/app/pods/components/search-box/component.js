@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { Component, computed, isNone } = Ember;
+const { $, Component, computed, isEmpty, observer} = Ember;
 
 export default Component.extend({
   classNames: ['search-box'],
@@ -9,7 +9,7 @@ export default Component.extend({
 
   filteredResults: computed('items.@each', 'value', {
     get() {
-      if (!isNone(this.get('items'))) {
+      if (!isEmpty(this.get('items'))) {
         const regex = new RegExp(this.get('value'), 'i');
 
         let results = this.get('items').filter((item) => {
@@ -25,5 +25,22 @@ export default Component.extend({
     setValue(value) {
       this.set('value', value);
     }
-  }
+  },
+
+  searchedKeyword: observer('value', function() {
+    let autocomplete = '#input-autocomplete';
+    let input = '.ff-autocomplete-field';
+    let header = '.main-header';
+    let searched = 'search-performed';
+
+    if (isEmpty(this.get('value'))) {
+      $(header).removeClass(searched);
+      $(autocomplete).removeClass(searched);
+      $(input).removeClass(searched);
+    } else {
+      $(header).addClass(searched);
+      $(autocomplete).addClass(searched);
+      $(input).addClass(searched);
+    }
+  })
 });

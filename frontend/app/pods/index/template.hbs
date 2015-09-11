@@ -1,7 +1,7 @@
-<h2 id="title">EmotionalizeSF</h2>
+<div class="index-container">
+  {{nav-bar}}
 
-{{search-box items=upcomingEvents}}
+  <header class="main-header">EmotionalizeSF</header>
 
-{{#each upcomingEvents as |event|}}
-  <p>{{#link-to 'event' event.id}}{{date-format event.date}} | {{event.title}} | {{event.venue}}{{/link-to}}</p>
-{{/each}}
+  {{search-box items=upcomingEvents}}
+</div>
