@@ -1,19 +1,68 @@
 #input-autocomplete {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  right: 0;
   margin: 0 auto;
   width: 60%;
-  max-width: 30em;
+  font-family: $armata;
+  transition: all 0.5s ease;
+  transition-delay: 2s;
+
+  &.search-performed {
+    top: 30%;
+    transition: all 0.5s ease;
+    transition-delay: 0.3s;
+  }
 
   .ff-autocomplete-field {
     width: 100%;
     outline: none;
-    font-size: 2em;
+    font-size: 28px;
+    line-height: 45px;
+    padding: 0 12px;
+    transition: all 0.5s ease;
+    transition-delay: 2s;
+
+    &.search-performed {
+      line-height: 36px;
+      font-size: 24px;
+      transition: all 0.5s ease;
+      transition-delay: 0.3s;
+    }
   }
 
   .ui-autocomplete-inline {
     width: 100%;
 
-    li {
+    ul,li {
       list-style-type: none;
+      list-style-position: inside;
+      margin: 0;
+      padding: 0;
+      color: $white;
+    }
+
+    li {
+      margin: 0 12px;
+    }
+
+    .search-result {
+      margin: 5px 0;
+
+      &:hover {
+        cursor: pointer;
+        background: $nav-grey;
+
+        span {
+          color: $firebrick;
+        }
+      }
+    }
+
+    .no-results {
+      margin-top: 5px;
+      padding-left: 12px;
     }
   }
 }

@@ -1,14 +1,23 @@
+@import 'normalize';
+@import 'variables';
 @import 'application';
 @import 'index';
-@import 'normalize';
+@import 'events';
 @import 'event';
+
+@import url(https://fonts.googleapis.com/css?family=Armata);
 
 @import "pod-styles";
 
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Ariel';
+
+  .ember-view {
+    &:last-child {
+      min-height: 100%;
+    }
+  }
 }
 
 a {

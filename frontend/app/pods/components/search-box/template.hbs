@@ -1,12 +1,12 @@
 {{#ui-autocomplete
   id="input-autocomplete"
-  placeholder="Search for an artist or an event name"
+  placeholder="Search for an upcoming EDM event in SF"
   value=value
   on-change="setValue"
   inline=true
   items=filteredResults as |item|}}
   {{#ui-option value=item.title}}
-    {{#link-to 'event' item.id}}{{item.title}}{{/link-to}}
+    {{search-result event=item}}
   {{/ui-option}}
 {{else}}
   {{ui-option class="no-results" value="No Results"}}

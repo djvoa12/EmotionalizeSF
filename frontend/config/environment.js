@@ -16,9 +16,9 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'connect-src': "'self' http://localhost:3000",
       'img-src': "'self' * ",
-      'style-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
       'script-src': "'self'",
-      'font-src': "'self'",
+      'font-src': "'self' https://fonts.gstatic.com",
       'frame-src': "*"
     },
     backend: {
